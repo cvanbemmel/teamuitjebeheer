@@ -40,7 +40,7 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
     }
 
     // URL van je Google Apps Script Web App
-    const webAppUrl = '://script.google.com/macros/s/AKfycbyYMBHjV9t4aFRMLZfkrX4YeraTGEpXNa-dsQ0iDXymlivANI3wMnAsdRvQsB0jkG2x/exec'; 
+    const webAppUrl = 'https://script.google.com/macros/s/AKfycby2U1x_sqXn8zV83Y9z7E-oV9l3q5tYrVbasOsTq1k-5xSfgQa81-hVVJx0yvkR3mpj/exec'; 
     // Vervang JE_WEBAPP_URL door je eigen Web App URL
 
     // POST request naar Google Apps Script
@@ -67,3 +67,4 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
         alert('Er is iets misgegaan bij het verzenden van de quiz. Controleer de console voor details.');
     });
 });
+
