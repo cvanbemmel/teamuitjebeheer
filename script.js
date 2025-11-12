@@ -1,6 +1,5 @@
 // script.js
-// https://script.google.com/macros/s/AKfycbyYMBHjV9t4aFRMLZfkrX4YeraTGEpXNa-dsQ0iDXymlivANI3wMnAsdRvQsB0jkG2x/exec
-
+// https://script.google.com/macros/s/AKfycby2U1x_sqXn8zV83Y9z7E-oV9l3q5tYrVbasOsTq1k-5xSfgQa81-hVVJx0yvkR3mpj/exec
 // === SPEELSE QUIZ LOGICA ===
 document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.getElementById('startBtn');
@@ -61,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === URL VAN JE GOOGLE APPS SCRIPT WEB APP ===
-    const webAppUrl = 'https://script.google.com/macros/s/AKfycbyYMBHjV9t4aFRMLZfkrX4YeraTGEpXNa-dsQ0iDXymlivANI3wMnAsdRvQsB0jkG2x/exec';
+    const webAppUrl = 'https://script.google.com/macros/s/AKfycby2U1x_sqXn8zV83Y9z7E-oV9l3q5tYrVbasOsTq1k-5xSfgQa81-hVVJx0yvkR3mpj/exec';
 
     try {
       const response = await fetch(webAppUrl, {
@@ -87,3 +86,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
