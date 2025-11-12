@@ -1,188 +1,173 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Teamuitje</title>
-<style>
-  body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; }
-  h2 { margin-top: 30px; }
-  .rubriek { margin-bottom: 20px; display: none; }
-  .rubriek.active { display: block; }
-  .vraag { margin-bottom: 10px; }
-  input, textarea { width: 100%; padding: 5px; margin-top: 3px; }
-  button { padding: 10px 20px; font-size: 16px; margin-top: 20px; }
-  /* Voortgangsbalk */
-  #progressContainer { width: 100%; background-color: #ddd; margin-bottom: 20px; }
-  #progressBar { width: 0%; height: 20px; background-color: #4CAF50; text-align: center; color: white; line-height: 20px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teamuitje</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Jouw input voor het Teamuitje</h1>
 
-<h1>Jouw input voor het teamuitje</h1>
+  <form id="quizForm">
+    <!-- Voornaam / Achternaam -->
+    <label>Voornaam: <input type="text" name="voornaam" required></label><br>
+    <label>Achternaam: <input type="text" name="achternaam" required></label><br><br>
 
-<!-- Voortgangsbalk -->
-<div id="progressContainer">
-  <div id="progressBar">0%</div>
-</div>
+    <!-- Rubriek 1: Over mij -->
+    <fieldset>
+      <legend>Over mij</legend>
+      <label>Waar kunnen we je het hardst mee aan het lachen maken?<br>
+        <input type="text" name="over_mij_1" required>
+      </label><br>
+      <label>Wat staat in je geheugen gegrift, maar ben je liever kwijt dan rijk?<br>
+        <input type="text" name="over_mij_2" required>
+      </label><br>
+      <label>Welke uitspraak zegt alles over jou?<br>
+        <input type="text" name="over_mij_3" required>
+      </label><br>
+      <label>Wat vind jij jouw meest ideale leeftijd?<br>
+        <input type="text" name="over_mij_4" required>
+      </label><br>
+      <label>Wat is je favoriete dag van de week?<br>
+        <input type="text" name="over_mij_5" required>
+      </label><br>
+      <label>Hoe ziet jouw ochtendroutine eruit?<br>
+        <input type="text" name="over_mij_6" required>
+      </label><br>
+      <label>Heb je een motto of spreuk die je veel gebruikt of volgt?<br>
+        <input type="text" name="over_mij_7" required>
+      </label><br>
+      <label>Van welke gewoonte wil je eigenlijk af, maar lukt je nog niet?<br>
+        <input type="text" name="over_mij_8" required>
+      </label>
+    </fieldset>
 
-<form id="quizForm">
+    <!-- Rubriek 2: Top secret -->
+    <fieldset>
+      <legend>Top secret</legend>
+      <label>Welke privézaken zou je niet zo snel met je collega’s delen?<br>
+        <input type="text" name="top_secret_1" required>
+      </label><br>
+      <label>Wat heb je als kind altijd graag willen hebben maar kreeg je niet?<br>
+        <input type="text" name="top_secret_2" required>
+      </label><br>
+      <label>Wat is het meest genante wat je ooit is overkomen?<br>
+        <input type="text" name="top_secret_3" required>
+      </label><br>
+      <label>Wat is je meest foute/domste aankoop ooit geweest?<br>
+        <input type="text" name="top_secret_4" required>
+      </label><br>
+      <label>Wat is het vreemdste excuus dat je ooit hebt gebruikt om niet te gaan werken?<br>
+        <input type="text" name="top_secret_5" required>
+      </label><br>
+      <label>Wat is het meest criminele wat je ooit hebt gedaan?<br>
+        <input type="text" name="top_secret_6" required>
+      </label>
+    </fieldset>
 
-  <!-- Rubriek 0: Persoonlijke info -->
-  <div class="rubriek active" id="rubriek0">
-    <h2>Persoonlijke info</h2>
-    <div class="vraag"><label>Voornaam:</label><input type="text" id="voornaam" required></div>
-    <div class="vraag"><label>Achternaam:</label><input type="text" id="achternaam" required></div>
-    <button type="button" onclick="nextRubriek(0)">Volgende</button>
-  </div>
+    <!-- Rubriek 3: Vrije tijd -->
+    <fieldset>
+      <legend>Vrije tijd</legend>
+      <label>Met welke hobby kan je echt volledig de tijd vergeten?<br>
+        <input type="text" name="vrije_tijd_1" required>
+      </label><br>
+      <label>Welke sport beoefen je graag?<br>
+        <input type="text" name="vrije_tijd_2" required>
+      </label><br>
+      <label>Wat is het beste concert dat je ooit bezocht hebt?<br>
+        <input type="text" name="vrije_tijd_3" required>
+      </label><br>
+      <label>Hoe ziet jouw perfecte niet-werkdag eruit?<br>
+        <input type="text" name="vrije_tijd_4" required>
+      </label><br>
+      <label>Welke film zou je graag opnieuw voor het eerst willen zien?<br>
+        <input type="text" name="vrije_tijd_5" required>
+      </label><br>
+      <label>Met welke hobby zou je starten als tijd en geld geen rol zou spelen?<br>
+        <input type="text" name="vrije_tijd_6" required>
+      </label>
+    </fieldset>
 
-  <!-- Rubriek 1: Over mij -->
-  <div class="rubriek" id="rubriek1">
-    <h2>Rubriek 1: Over mij</h2>
-    <div class="vraag"><label>Waar kunnen we je het hardst mee aan het lachen maken?</label><textarea id="vraag1"></textarea></div>
-    <div class="vraag"><label>Wat staat in je geheugen gegrift, maar ben je liever kwijt dan rijk?</label><textarea id="vraag2"></textarea></div>
-    <div class="vraag"><label>Welke uitspraak zegt alles over jou?</label><textarea id="vraag3"></textarea></div>
-    <div class="vraag"><label>Wat vind jij jouw meest ideale leeftijd?</label><textarea id="vraag4"></textarea></div>
-    <div class="vraag"><label>Wat is je favoriete dag van de week?</label><textarea id="vraag5"></textarea></div>
-    <div class="vraag"><label>Hoe ziet jouw ochtendroutine eruit?</label><textarea id="vraag6"></textarea></div>
-    <div class="vraag"><label>Heb je een motto of spreuk die je veel gebruikt of volgt?</label><textarea id="vraag7"></textarea></div>
-    <div class="vraag"><label>Van welke gewoonte wil je eigenlijk af, maar lukt je nog niet?</label><textarea id="vraag8"></textarea></div>
-    <button type="button" onclick="nextRubriek(1)">Volgende</button>
-  </div>
+    <!-- Rubriek 4: Waardevol -->
+    <fieldset>
+      <legend>Waardevol</legend>
+      <label>Wat helpt je om je beter te voelen als je niet lekker in je vel zit?<br>
+        <input type="text" name="waardevol_1" required>
+      </label><br>
+      <label>Wat is het leukste moment geweest in je leven, wat je zo weer opnieuw mee zou willen maken?<br>
+        <input type="text" name="waardevol_2" required>
+      </label><br>
+      <label>Wat is de mooiste vakantie die je ooit hebt gehad?<br>
+        <input type="text" name="waardevol_3" required>
+      </label><br>
+      <label>Welk advies over de ‘echte wereld’ zou je geven aan je jongere zelf?<br>
+        <input type="text" name="waardevol_4" required>
+      </label><br>
+      <label>Waar zou je meer tijd en aandacht voor vrij willen maken?<br>
+        <input type="text" name="waardevol_5" required>
+      </label><br>
+      <label>Welke Pickwick-vraag zou jij graag willen toevoegen aan iedere theedoos?<br>
+        <input type="text" name="waardevol_6" required>
+      </label>
+    </fieldset>
 
-  <!-- Rubriek 2: Top secret -->
-  <div class="rubriek" id="rubriek2">
-    <h2>Rubriek 2: Top secret</h2>
-    <div class="vraag"><label>Welke privézaken zou je niet zo snel met je collega’s delen?</label><textarea id="vraag9"></textarea></div>
-    <div class="vraag"><label>Wat heb je als kind altijd graag willen hebben maar kreeg je niet?</label><textarea id="vraag10"></textarea></div>
-    <div class="vraag"><label>Wat is het meest genante wat je ooit is overkomen?</label><textarea id="vraag11"></textarea></div>
-    <div class="vraag"><label>Wat is je meest foute/domste aankoop ooit geweest?</label><textarea id="vraag12"></textarea></div>
-    <div class="vraag"><label>Wat is het vreemdste excuus dat je ooit hebt gebruikt om niet te gaan werken?</label><textarea id="vraag13"></textarea></div>
-    <div class="vraag"><label>Wat is het meest criminele wat je ooit hebt gedaan?</label><textarea id="vraag14"></textarea></div>
-    <button type="button" onclick="nextRubriek(2)">Volgende</button>
-  </div>
+    <!-- Rubriek 5: Wat als… -->
+    <fieldset>
+      <legend>Wat als…</legend>
+      <label>Wat zou je over jezelf schrijven als je een profiel zou aanmaken op een datingsite?<br>
+        <input type="text" name="wat_als_1" required>
+      </label><br>
+      <label>Welke slechte gewoonte zou je oppakken als het niet meer slecht zou zijn?<br>
+        <input type="text" name="wat_als_2" required>
+      </label><br>
+      <label>Als je een nacht op je werk kon blijven slapen, waar zou je slapen?<br>
+        <input type="text" name="wat_als_3" required>
+      </label><br>
+      <label>Als je maar 2 uur per week mag werken, wat zou je dan doen?<br>
+        <input type="text" name="wat_als_4" required>
+      </label><br>
+      <label>Als je een deel van je huis zou verbouwen, wat zou het zijn en waarom?<br>
+        <input type="text" name="wat_als_5" required>
+      </label><br>
+      <label>Als je met iemand een maand mocht ruilen van leven en werk, wie zou dat zijn?<br>
+        <input type="text" name="wat_als_6" required>
+      </label><br>
+      <label>Als je niet hier zou wonen, in welk land zou je het liefst stranden?<br>
+        <input type="text" name="wat_als_7" required>
+      </label><br>
+      <label>Als je werk moet kiezen waarbij je geen computer meer zou mogen gebruiken, wat zou het dan zijn?<br>
+        <input type="text" name="wat_als_8" required>
+      </label>
+    </fieldset>
 
-  <!-- Rubriek 3: Vrije tijd -->
-  <div class="rubriek" id="rubriek3">
-    <h2>Rubriek 3: Vrije tijd</h2>
-    <div class="vraag"><label>Met welke hobby kan je echt volledig de tijd vergeten?</label><textarea id="vraag15"></textarea></div>
-    <div class="vraag"><label>Welke sport beoefen je graag?</label><textarea id="vraag16"></textarea></div>
-    <div class="vraag"><label>Wat is het beste concert dat je ooit bezocht hebt?</label><textarea id="vraag17"></textarea></div>
-    <div class="vraag"><label>Hoe ziet jouw perfecte niet-werkdag eruit?</label><textarea id="vraag18"></textarea></div>
-    <div class="vraag"><label>Welke film zou je graag opnieuw voor het eerst willen zien?</label><textarea id="vraag19"></textarea></div>
-    <div class="vraag"><label>Met welke hobby zou je starten als tijd en geld geen rol zou spelen?</label><textarea id="vraag20"></textarea></div>
-    <button type="button" onclick="nextRubriek(3)">Volgende</button>
-  </div>
+    <!-- Rubriek 6: Werk -->
+    <fieldset>
+      <legend>Werk</legend>
+      <label>Welk werk zou je willen doen als je weer helemaal opnieuw zou beginnen?<br>
+        <input type="text" name="werk_1" required>
+      </label><br>
+      <label>Wat denken anderen dat je heel goed kunt, maar dat jij eigenlijk best spannend vindt?<br>
+        <input type="text" name="werk_2" required>
+      </label><br>
+      <label>Welke werkzaamheden zou je doen, ook als je er niet voor betaald zou worden?<br>
+        <input type="text" name="werk_3" required>
+      </label><br>
+      <label>Wat is je grootste blunder op de werkvloer geweest?<br>
+        <input type="text" name="werk_4" required>
+      </label><br>
+      <label>Tegen welke werkzaamheden of activiteiten zou je het liefst ‘nee’ willen zeggen?<br>
+        <input type="text" name="werk_5" required>
+      </label><br>
+      <label>Wat vind je het verschrikkelijkste om te doen tijdens een team-uitje?<br>
+        <input type="text" name="werk_6" required>
+      </label>
+    </fieldset>
 
-  <!-- Rubriek 4: Waardevol -->
-  <div class="rubriek" id="rubriek4">
-    <h2>Rubriek 4: Waardevol</h2>
-    <div class="vraag"><label>Wat helpt je om je beter te voelen als je niet lekker in je vel zit?</label><textarea id="vraag21"></textarea></div>
-    <div class="vraag"><label>Wat is het leukste moment geweest in je leven, wat je zo weer opnieuw mee zou willen maken?</label><textarea id="vraag22"></textarea></div>
-    <div class="vraag"><label>Wat is de mooiste vakantie die je ooit hebt gehad?</label><textarea id="vraag23"></textarea></div>
-    <div class="vraag"><label>Welk advies over de ‘echte wereld’ zou je geven aan je jongere zelf?</label><textarea id="vraag24"></textarea></div>
-    <div class="vraag"><label>Waar zou je meer tijd en aandacht voor vrij willen maken?</label><textarea id="vraag25"></textarea></div>
-    <div class="vraag"><label>Welke Pickwick-vraag zou jij graag willen toevoegen aan iedere theedoos?</label><textarea id="vraag26"></textarea></div>
-    <button type="button" onclick="nextRubriek(4)">Volgende</button>
-  </div>
-
-  <!-- Rubriek 5: Wat als… -->
-  <div class="rubriek" id="rubriek5">
-    <h2>Rubriek 5: Wat als…</h2>
-    <div class="vraag"><label>Wat zou je over jezelf schrijven als je een profiel zou aanmaken op een datingsite?</label><textarea id="vraag27"></textarea></div>
-    <div class="vraag"><label>Welke slechte gewoonte zou je oppakken als het niet meer slecht zou zijn?</label><textarea id="vraag28"></textarea></div>
-    <div class="vraag"><label>Als je een nacht op je werk kon blijven slapen, waar zou je slapen?</label><textarea id="vraag29"></textarea></div>
-    <div class="vraag"><label>Als je maar 2 uur per week mag werken, wat zou je dan doen?</label><textarea id="vraag30"></textarea></div>
-    <div class="vraag"><label>Als je een deel van je huis zou verbouwen, wat zou het zijn en waarom?</label><textarea id="vraag31"></textarea></div>
-    <div class="vraag"><label>Als je met iemand een maand mocht ruilen van leven en werk, wie zou dat zijn?</label><textarea id="vraag32"></textarea></div>
-    <div class="vraag"><label>Als je niet hier zou wonen, in welk land zou je het liefst stranden?</label><textarea id="vraag33"></textarea></div>
-    <div class="vraag"><label>Als je werk moet kiezen waarbij je geen computer meer zou mogen gebruiken, wat zou het dan zijn?</label><textarea id="vraag34"></textarea></div>
-    <button type="button" onclick="nextRubriek(5)">Volgende</button>
-  </div>
-
-  <!-- Rubriek 6: Werk -->
-  <div class="rubriek" id="rubriek6">
-    <h2>Rubriek 6: Werk</h2>
-    <div class="vraag"><label>Welk werk zou je willen doen als je weer helemaal opnieuw zou beginnen?</label><textarea id="vraag35"></textarea></div>
-    <div class="vraag"><label>Wat denken anderen dat je heel goed kunt, maar dat jij eigenlijk best spannend vindt?</label><textarea id="vraag36"></textarea></div>
-    <div class="vraag"><label>Welke werkzaamheden zou je doen, ook als je er niet voor betaald zou worden?</label><textarea id="vraag37"></textarea></div>
-    <div class="vraag"><label>Wat is je grootste blunder op de werkvloer geweest?</label><textarea id="vraag38"></textarea></div>
-    <div class="vraag"><label>Tegen welke werkzaamheden of activiteiten zou je het liefst ‘nee’ willen zeggen?</label><textarea id="vraag39"></textarea></div>
-    <div class="vraag"><label>Wat vind je het verschrikkelijkste om te doen tijdens een team-uitje?</label><textarea id="vraag40"></textarea></div>
+    <br>
     <button type="submit">Verstuur Quiz</button>
-  </div>
+  </form>
 
-</form>
-
-<script>
-const totalRubrieken = 6; // exclusief persoonlijke info
-
-// Update voortgangsbalk
-function updateProgress(currentRubriek) {
-  const percent = Math.round((currentRubriek / totalRubrieken) * 100);
-  const bar = document.getElementById('progressBar');
-  bar.style.width = percent + '%';
-  bar.textContent = percent + '%';
-}
-
-// Functie om naar de volgende rubriek te gaan
-function nextRubriek(current) {
-  const rubriek = document.getElementById('rubriek'+current);
-  const textareas = rubriek.querySelectorAll('textarea');
-  let answered = Array.from(textareas).some(t => t.value.trim() !== '');
-  
-  if(current === 0) answered = document.getElementById('voornaam').value.trim() !== '' && document.getElementById('achternaam').value.trim() !== '';
-
-  if(!answered) {
-    alert('Vul minstens één veld in deze rubriek in voordat je verdergaat.');
-    return;
-  }
-
-  rubriek.classList.remove('active');
-  const next = document.getElementById('rubriek'+(current+1));
-  if(next) next.classList.add('active');
-  updateProgress(current);
-}
-
-// Verzenden van formulier
-document.getElementById('quizForm').addEventListener('submit', function(e){
-  e.preventDefault();
-
-  const formData = {
-    voornaam: document.getElementById('voornaam').value,
-    achternaam: document.getElementById('achternaam').value
-  };
-
-  for(let i=1; i<=40; i++){
-    formData['vraag'+i] = document.getElementById('vraag'+i).value;
-  }
-
-  fetch('https://script.google.com/macros/s/AKfycbyYMBHjV9t4aFRMLZfkrX4YeraTGEpXNa-dsQ0iDXymlivANI3wMnAsdRvQsB0jkG2x/exec', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(formData)
-  })
-  .then(response => response.json())
-  .then(data => {
-    if(data.result === "success"){
-      alert('Je inzending is succesvol verstuurd! 🎉');
-      document.getElementById('quizForm').reset();
-      document.querySelectorAll('.rubriek').forEach(r => r.classList.remove('active'));
-      document.getElementById('rubriek0').classList.add('active');
-      updateProgress(0);
-    } else {
-      alert('Er is een fout opgetreden: ' + data.message);
-      console.error('Serverfout:', data);
-    }
-  })
-  .catch(error => {
-    alert('Er ging iets mis bij het versturen. Bekijk de console voor details.');
-    console.error('Fetch-fout:', error);
-  });
-});
-
-// Init voortgangsbalk
-updateProgress(0);
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
