@@ -11,161 +11,176 @@
 
   <form id="quizForm">
     <!-- Voornaam / Achternaam -->
-    <label>Voornaam: <input type="text" name="voornaam"></label><br>
-    <label>Achternaam: <input type="text" name="achternaam"></label><br><br>
+    <div class="intro">
+      <label>Voornaam:<br>
+        <input type="text" name="voornaam">
+      </label><br>
+      <label>Achternaam:<br>
+        <input type="text" name="achternaam">
+      </label><br><br>
+      <button type="button" id="startBtn">Start</button>
+    </div>
 
-    <!-- Rubriek 1: Over mij -->
-    <fieldset>
-      <legend>Over mij</legend>
-      <label>Waar kunnen we je het hardst mee aan het lachen maken?<br>
-        <input type="text" name="over_mij_1">
-      </label><br>
-      <label>Wat staat in je geheugen gegrift, maar ben je liever kwijt dan rijk?<br>
-        <input type="text" name="over_mij_2">
-      </label><br>
-      <label>Welke uitspraak zegt alles over jou?<br>
-        <input type="text" name="over_mij_3">
-      </label><br>
-      <label>Wat vind jij jouw meest ideale leeftijd?<br>
-        <input type="text" name="over_mij_4">
-      </label><br>
-      <label>Wat is je favoriete dag van de week?<br>
-        <input type="text" name="over_mij_5">
-      </label><br>
-      <label>Hoe ziet jouw ochtendroutine eruit?<br>
-        <input type="text" name="over_mij_6">
-      </label><br>
-      <label>Heb je een motto of spreuk die je veel gebruikt of volgt?<br>
-        <input type="text" name="over_mij_7">
-      </label><br>
-      <label>Van welke gewoonte wil je eigenlijk af, maar lukt je nog niet?<br>
-        <input type="text" name="over_mij_8">
-      </label>
-    </fieldset>
+    <!-- RUBRIEKEN -->
+    <div id="rubrieken">
 
-    <!-- Rubriek 2: Top secret -->
-    <fieldset>
-      <legend>Top secret</legend>
-      <label>Welke privézaken zou je niet zo snel met je collega’s delen?<br>
-        <input type="text" name="top_secret_1">
-      </label><br>
-      <label>Wat heb je als kind altijd graag willen hebben maar kreeg je niet?<br>
-        <input type="text" name="top_secret_2">
-      </label><br>
-      <label>Wat is het meest genante wat je ooit is overkomen?<br>
-        <input type="text" name="top_secret_3">
-      </label><br>
-      <label>Wat is je meest foute/domste aankoop ooit geweest?<br>
-        <input type="text" name="top_secret_4">
-      </label><br>
-      <label>Wat is het vreemdste excuus dat je ooit hebt gebruikt om niet te gaan werken?<br>
-        <input type="text" name="top_secret_5">
-      </label><br>
-      <label>Wat is het meest criminele wat je ooit hebt gedaan?<br>
-        <input type="text" name="top_secret_6">
-      </label>
-    </fieldset>
+      <!-- Rubriek 1 -->
+      <fieldset data-rubriek="Over mij" class="hidden">
+        <legend>Over mij</legend>
+        <label>Waar kunnen we je het hardst mee aan het lachen maken?<br>
+          <input type="text" name="over_mij_1">
+        </label><br>
+        <label>Wat staat in je geheugen gegrift, maar ben je liever kwijt dan rijk?<br>
+          <input type="text" name="over_mij_2">
+        </label><br>
+        <label>Welke uitspraak zegt alles over jou?<br>
+          <input type="text" name="over_mij_3">
+        </label><br>
+        <label>Wat vind jij jouw meest ideale leeftijd?<br>
+          <input type="text" name="over_mij_4">
+        </label><br>
+        <label>Wat is je favoriete dag van de week?<br>
+          <input type="text" name="over_mij_5">
+        </label><br>
+        <label>Hoe ziet jouw ochtendroutine eruit?<br>
+          <input type="text" name="over_mij_6">
+        </label><br>
+        <label>Heb je een motto of spreuk die je veel gebruikt of volgt?<br>
+          <input type="text" name="over_mij_7">
+        </label><br>
+        <label>Van welke gewoonte wil je eigenlijk af, maar lukt je nog niet?<br>
+          <input type="text" name="over_mij_8">
+        </label>
+        <button type="button" class="nextBtn">Volgende</button>
+      </fieldset>
 
-    <!-- Rubriek 3: Vrije tijd -->
-    <fieldset>
-      <legend>Vrije tijd</legend>
-      <label>Met welke hobby kan je echt volledig de tijd vergeten?<br>
-        <input type="text" name="vrije_tijd_1">
-      </label><br>
-      <label>Welke sport beoefen je graag?<br>
-        <input type="text" name="vrije_tijd_2">
-      </label><br>
-      <label>Wat is het beste concert dat je ooit bezocht hebt?<br>
-        <input type="text" name="vrije_tijd_3">
-      </label><br>
-      <label>Hoe ziet jouw perfecte niet-werkdag eruit?<br>
-        <input type="text" name="vrije_tijd_4">
-      </label><br>
-      <label>Welke film zou je graag opnieuw voor het eerst willen zien?<br>
-        <input type="text" name="vrije_tijd_5">
-      </label><br>
-      <label>Met welke hobby zou je starten als tijd en geld geen rol zou spelen?<br>
-        <input type="text" name="vrije_tijd_6">
-      </label>
-    </fieldset>
+      <!-- Rubriek 2 -->
+      <fieldset data-rubriek="Top secret" class="hidden">
+        <legend>Top secret</legend>
+        <label>Welke privézaken zou je niet zo snel met je collega’s delen?<br>
+          <input type="text" name="top_secret_1">
+        </label><br>
+        <label>Wat heb je als kind altijd graag willen hebben maar kreeg je niet?<br>
+          <input type="text" name="top_secret_2">
+        </label><br>
+        <label>Wat is het meest genante wat je ooit is overkomen?<br>
+          <input type="text" name="top_secret_3">
+        </label><br>
+        <label>Wat is je meest foute/domste aankoop ooit geweest?<br>
+          <input type="text" name="top_secret_4">
+        </label><br>
+        <label>Wat is het vreemdste excuus dat je ooit hebt gebruikt om niet te gaan werken?<br>
+          <input type="text" name="top_secret_5">
+        </label><br>
+        <label>Wat is het meest criminele wat je ooit hebt gedaan?<br>
+          <input type="text" name="top_secret_6">
+        </label>
+        <button type="button" class="nextBtn">Volgende</button>
+      </fieldset>
 
-    <!-- Rubriek 4: Waardevol -->
-    <fieldset>
-      <legend>Waardevol</legend>
-      <label>Wat helpt je om je beter te voelen als je niet lekker in je vel zit?<br>
-        <input type="text" name="waardevol_1">
-      </label><br>
-      <label>Wat is het leukste moment geweest in je leven, wat je zo weer opnieuw mee zou willen maken?<br>
-        <input type="text" name="waardevol_2">
-      </label><br>
-      <label>Wat is de mooiste vakantie die je ooit hebt gehad?<br>
-        <input type="text" name="waardevol_3">
-      </label><br>
-      <label>Welk advies over de ‘echte wereld’ zou je geven aan je jongere zelf?<br>
-        <input type="text" name="waardevol_4">
-      </label><br>
-      <label>Waar zou je meer tijd en aandacht voor vrij willen maken?<br>
-        <input type="text" name="waardevol_5">
-      </label><br>
-      <label>Welke Pickwick-vraag zou jij graag willen toevoegen aan iedere theedoos?<br>
-        <input type="text" name="waardevol_6">
-      </label>
-    </fieldset>
+      <!-- Rubriek 3 -->
+      <fieldset data-rubriek="Vrije tijd" class="hidden">
+        <legend>Vrije tijd</legend>
+        <label>Met welke hobby kan je echt volledig de tijd vergeten?<br>
+          <input type="text" name="vrije_tijd_1">
+        </label><br>
+        <label>Welke sport beoefen je graag?<br>
+          <input type="text" name="vrije_tijd_2">
+        </label><br>
+        <label>Wat is het beste concert dat je ooit bezocht hebt?<br>
+          <input type="text" name="vrije_tijd_3">
+        </label><br>
+        <label>Hoe ziet jouw perfecte niet-werkdag eruit?<br>
+          <input type="text" name="vrije_tijd_4">
+        </label><br>
+        <label>Welke film zou je graag opnieuw voor het eerst willen zien?<br>
+          <input type="text" name="vrije_tijd_5">
+        </label><br>
+        <label>Met welke hobby zou je starten als tijd en geld geen rol zou spelen?<br>
+          <input type="text" name="vrije_tijd_6">
+        </label>
+        <button type="button" class="nextBtn">Volgende</button>
+      </fieldset>
 
-    <!-- Rubriek 5: Wat als… -->
-    <fieldset>
-      <legend>Wat als…</legend>
-      <label>Wat zou je over jezelf schrijven als je een profiel zou aanmaken op een datingsite?<br>
-        <input type="text" name="wat_als_1">
-      </label><br>
-      <label>Welke slechte gewoonte zou je oppakken als het niet meer slecht zou zijn?<br>
-        <input type="text" name="wat_als_2">
-      </label><br>
-      <label>Als je een nacht op je werk kon blijven slapen, waar zou je slapen?<br>
-        <input type="text" name="wat_als_3">
-      </label><br>
-      <label>Als je maar 2 uur per week mag werken, wat zou je dan doen?<br>
-        <input type="text" name="wat_als_4">
-      </label><br>
-      <label>Als je een deel van je huis zou verbouwen, wat zou het zijn en waarom?<br>
-        <input type="text" name="wat_als_5">
-      </label><br>
-      <label>Als je met iemand een maand mocht ruilen van leven en werk, wie zou dat zijn?<br>
-        <input type="text" name="wat_als_6">
-      </label><br>
-      <label>Als je niet hier zou wonen, in welk land zou je het liefst stranden?<br>
-        <input type="text" name="wat_als_7">
-      </label><br>
-      <label>Als je werk moet kiezen waarbij je geen computer meer zou mogen gebruiken, wat zou het dan zijn?<br>
-        <input type="text" name="wat_als_8">
-      </label>
-    </fieldset>
+      <!-- Rubriek 4 -->
+      <fieldset data-rubriek="Waardevol" class="hidden">
+        <legend>Waardevol</legend>
+        <label>Wat helpt je om je beter te voelen als je niet lekker in je vel zit?<br>
+          <input type="text" name="waardevol_1">
+        </label><br>
+        <label>Wat is het leukste moment geweest in je leven, wat je zo weer opnieuw mee zou willen maken?<br>
+          <input type="text" name="waardevol_2">
+        </label><br>
+        <label>Wat is de mooiste vakantie die je ooit hebt gehad?<br>
+          <input type="text" name="waardevol_3">
+        </label><br>
+        <label>Welk advies over de ‘echte wereld’ zou je geven aan je jongere zelf?<br>
+          <input type="text" name="waardevol_4">
+        </label><br>
+        <label>Waar zou je meer tijd en aandacht voor vrij willen maken?<br>
+          <input type="text" name="waardevol_5">
+        </label><br>
+        <label>Welke Pickwick-vraag zou jij graag willen toevoegen aan iedere theedoos?<br>
+          <input type="text" name="waardevol_6">
+        </label>
+        <button type="button" class="nextBtn">Volgende</button>
+      </fieldset>
 
-    <!-- Rubriek 6: Werk -->
-    <fieldset>
-      <legend>Werk</legend>
-      <label>Welk werk zou je willen doen als je weer helemaal opnieuw zou beginnen?<br>
-        <input type="text" name="werk_1">
-      </label><br>
-      <label>Wat denken anderen dat je heel goed kunt, maar dat jij eigenlijk best spannend vindt?<br>
-        <input type="text" name="werk_2">
-      </label><br>
-      <label>Welke werkzaamheden zou je doen, ook als je er niet voor betaald zou worden?<br>
-        <input type="text" name="werk_3">
-      </label><br>
-      <label>Wat is je grootste blunder op de werkvloer geweest?<br>
-        <input type="text" name="werk_4">
-      </label><br>
-      <label>Tegen welke werkzaamheden of activiteiten zou je het liefst ‘nee’ willen zeggen?<br>
-        <input type="text" name="werk_5">
-      </label><br>
-      <label>Wat vind je het verschrikkelijkste om te doen tijdens een team-uitje?<br>
-        <input type="text" name="werk_6">
-      </label>
-    </fieldset>
+      <!-- Rubriek 5 -->
+      <fieldset data-rubriek="Wat als…" class="hidden">
+        <legend>Wat als…</legend>
+        <label>Wat zou je over jezelf schrijven als je een profiel zou aanmaken op een datingsite?<br>
+          <input type="text" name="wat_als_1">
+        </label><br>
+        <label>Welke slechte gewoonte zou je oppakken als het niet meer slecht zou zijn?<br>
+          <input type="text" name="wat_als_2">
+        </label><br>
+        <label>Als je een nacht op je werk kon blijven slapen, waar zou je slapen?<br>
+          <input type="text" name="wat_als_3">
+        </label><br>
+        <label>Als je maar 2 uur per week mag werken, wat zou je dan doen?<br>
+          <input type="text" name="wat_als_4">
+        </label><br>
+        <label>Als je een deel van je huis zou verbouwen, wat zou het zijn en waarom?<br>
+          <input type="text" name="wat_als_5">
+        </label><br>
+        <label>Als je met iemand een maand mocht ruilen van leven en werk, wie zou dat zijn?<br>
+          <input type="text" name="wat_als_6">
+        </label><br>
+        <label>Als je niet hier zou wonen, in welk land zou je het liefst stranden?<br>
+          <input type="text" name="wat_als_7">
+        </label><br>
+        <label>Als je werk moet kiezen waarbij je geen computer meer zou mogen gebruiken, wat zou het dan zijn?<br>
+          <input type="text" name="wat_als_8">
+        </label>
+        <button type="button" class="nextBtn">Volgende</button>
+      </fieldset>
 
-    <br>
-    <button type="submit">Verstuur Quiz</button>
+      <!-- Rubriek 6 -->
+      <fieldset data-rubriek="Werk" class="hidden">
+        <legend>Werk</legend>
+        <label>Welk werk zou je willen doen als je weer helemaal opnieuw zou beginnen?<br>
+          <input type="text" name="werk_1">
+        </label><br>
+        <label>Wat denken anderen dat je heel goed kunt, maar dat jij eigenlijk best spannend vindt?<br>
+          <input type="text" name="werk_2">
+        </label><br>
+        <label>Welke werkzaamheden zou je doen, ook als je er niet voor betaald zou worden?<br>
+          <input type="text" name="werk_3">
+        </label><br>
+        <label>Wat is je grootste blunder op de werkvloer geweest?<br>
+          <input type="text" name="werk_4">
+        </label><br>
+        <label>Tegen welke werkzaamheden of activiteiten zou je het liefst ‘nee’ willen zeggen?<br>
+          <input type="text" name="werk_5">
+        </label><br>
+        <label>Wat vind je het verschrikkelijkste om te doen tijdens een team-uitje?<br>
+          <input type="text" name="werk_6">
+        </label><br>
+        <button type="submit">Verstuur antwoorden</button>
+      </fieldset>
+
+    </div>
   </form>
 
   <script src="script.js"></script>
