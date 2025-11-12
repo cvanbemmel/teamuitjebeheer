@@ -26,5 +26,6 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
     .then(response => response.json())
     .then(res => {
         if(res.result === 'success'){
-            alert('Quiz succesvol verzonden! Dank je wel.');
+            alert('Antwoorden succesvol verzonden! Dank je wel.');
             e.target.reset(); //
+
