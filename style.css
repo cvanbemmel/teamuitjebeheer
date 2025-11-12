@@ -79,6 +79,10 @@ button[type="submit"]:hover {
     background-color: #45a049;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Kleinere schermen */
 @media (max-width: 600px) {
     form {
