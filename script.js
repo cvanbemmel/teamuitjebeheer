@@ -2,7 +2,41 @@
 // https://script.google.com/macros/s/AKfycbyYMBHjV9t4aFRMLZfkrX4YeraTGEpXNa-dsQ0iDXymlivANI3wMnAsdRvQsB0jkG2x/exec
 
 
-// script.js
+// Toon rubrieken stap voor stap
+document.addEventListener('DOMContentLoaded', () => {
+  const startBtn = document.getElementById('startBtn');
+  const rubrieken = document.querySelectorAll('fieldset');
+  let currentIndex = 0;
+
+  function showRubriek(index) {
+    rubrieken.forEach((fs, i) => fs.classList.toggle('hidden', i !== index));
+  }
+
+  startBtn.addEventListener('click', () => {
+    const voornaam = document.querySelector('input[name="voornaam"]').value.trim();
+    const achternaam = document.querySelector('input[name="achternaam"]').value.trim();
+    if (!voornaam || !achternaam) {
+      alert('Vul je voornaam en achternaam in.');
+      return;
+    }
+    document.querySelector('.intro').classList.add('hidden');
+    showRubriek(0);
+  });
+
+  document.querySelectorAll('.nextBtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const fieldset = btn.closest('fieldset');
+      const inputs = fieldset.querySelectorAll('input[type="text"]');
+      const ingevuld = Array.from(inputs).some(i => i.value.trim() !== '');
+      if (!ingevuld) {
+        alert(`Vul minimaal één antwoord in bij rubriek: "${fieldset.dataset.rubriek}"`);
+        return;
+      }
+      currentIndex++;
+      if (currentIndex < rubrieken.length) showRubriek(currentIndex);
+    });
+  });
+});
 
 document.getElementById('quizForm').addEventListener('submit', function(e) {
     e.preventDefault(); // voorkomt standaard submit
@@ -67,4 +101,5 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
         alert('Er is iets misgegaan bij het verzenden van de quiz. Controleer de console voor details.');
     });
 });
+
 
