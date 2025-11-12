@@ -1,5 +1,5 @@
 // script.js
-// https://script.google.com/macros/s/AKfycby2U1x_sqXn8zV83Y9z7E-oV9l3q5tYrVbasOsTq1k-5xSfgQa81-hVVJx0yvkR3mpj/exec
+// https://script.google.com/macros/s/AKfycbwDu46uJ31ToqIUMJ51iMaN7gXdm3a4pP18ua1lYQwsW1rt-TfNZLJAPHLVrSg5m76X/exec
 // === SPEELSE QUIZ LOGICA ===
 document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.getElementById('startBtn');
@@ -86,4 +86,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 
